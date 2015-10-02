@@ -9,8 +9,12 @@
 #include "walletdb.h" // for BackupWallet
 #include "base58.h"
 
+
+
 #include <QSet>
 #include <QTimer>
+
+#include <QDebug>
 
 WalletModel::WalletModel(CWallet *wallet, OptionsModel *optionsModel, QObject *parent) :
     QObject(parent), wallet(wallet), optionsModel(optionsModel), addressTableModel(0),
@@ -298,6 +302,20 @@ bool WalletModel::setWalletLocked(bool locked, const SecureString &passPhrase)
         return wallet->Unlock(passPhrase);
     }
 }
+bool WalletModel::setWalletLockedIndefinite(bool locked, const SecureString &passPhrase)
+{
+    if(locked)
+    {
+        // Lock
+        return wallet->Lock();
+    }
+    else
+    {
+        // Unlock
+
+        return wallet->Unlock(passPhrase);
+    }
+}
 
 bool WalletModel::changePassphrase(const SecureString &oldPass, const SecureString &newPass)
 {
@@ -364,6 +382,19 @@ WalletModel::UnlockContext WalletModel::requestUnlock()
     {
         // Request UI to unlock wallet
         emit requireUnlock();
+    }
+    // If wallet is still locked, unlock was failed or cancelled, mark context as invalid
+    bool valid = getEncryptionStatus() != Locked;
+
+    return UnlockContext(this, valid, was_locked);
+}
+WalletModel::UnlockContext WalletModel::requestUnlockIndefinite()
+{
+    bool was_locked = getEncryptionStatus() == Locked;
+    if(was_locked)
+    {
+        // Request UI to unlock wallet
+        emit requireUnlockIndefinite();
     }
     // If wallet is still locked, unlock was failed or cancelled, mark context as invalid
     bool valid = getEncryptionStatus() != Locked;

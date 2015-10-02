@@ -91,6 +91,7 @@ public:
     bool setWalletEncrypted(bool encrypted, const SecureString &passphrase);
     // Passphrase only needed when unlocking
     bool setWalletLocked(bool locked, const SecureString &passPhrase=SecureString());
+    bool setWalletLockedIndefinite(bool locked, const SecureString &passPhrase=SecureString());
     bool changePassphrase(const SecureString &oldPass, const SecureString &newPass);
     // Wallet backup
     bool backupWallet(const QString &filename);
@@ -116,6 +117,7 @@ public:
     };
 
     UnlockContext requestUnlock();
+    UnlockContext requestUnlockIndefinite();
 
     bool getPubKey(const CKeyID &address, CPubKey& vchPubKeyOut) const;
     void getOutputs(const std::vector<COutPoint>& vOutpoints, std::vector<COutput>& vOutputs);
@@ -164,6 +166,7 @@ signals:
     // It is valid behaviour for listeners to keep the wallet locked after this signal;
     // this means that the unlocking failed or was cancelled.
     void requireUnlock();
+    void requireUnlockIndefinite();
 
     // Asynchronous message notification
     void message(const QString &title, const QString &message, unsigned int style);

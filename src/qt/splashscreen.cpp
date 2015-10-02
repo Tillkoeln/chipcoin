@@ -2,54 +2,78 @@
 #include "clientversion.h"
 #include "util.h"
 
-#include <QPainter>
-#undef loop /* ugh, remove this when the #define loop is gone from util.h */
 #include <QApplication>
 
-SplashScreen::SplashScreen(const QPixmap &pixmap, Qt::WindowFlags f) :
-    QSplashScreen(pixmap, f)
+#include <QDesktopWidget>
+
+SplashScreen::SplashScreen(QWidget *parent) :
+    QWidget(parent)
 {
-    // set reference point, paddings
-    int paddingLeftCol2         = 25;
-    int paddingTopCol2          = 376;
-    int line1 = 0;
-    int line2 = 13;
-    int line3 = 26;
-    int line4 = 39;
 
-    float fontFactor            = 1.0;
+    QRect rec = QApplication::desktop()->screenGeometry();
 
-    // define text to place
-    QString titleText       = QString(QApplication::applicationName()).replace(QString("-testnet"), QString(""), Qt::CaseSensitive); // cut of testnet, place it as single object further down
-    QString versionText     = QString("Version %1 ").arg(QString::fromStdString(FormatFullVersion()));
-    QString copyrightText1   = QChar(0xA9)+QString(" 2009-2015 ").arg(COPYRIGHT_YEAR) + QString(tr("The Bitcoin Core Developers"));
-    QString copyrightText2   = QChar(0xA9)+QString(" 2014-2015 ").arg(COPYRIGHT_YEAR) + QString(tr("The Dash Core Developers"));
-    QString copyrightText3   = QChar(0xA9)+QString(" 2015 ").arg(COPYRIGHT_YEAR) + QString(tr("The ChipCoin Core Developers"));
+    int screenWidth = rec.width();
+    int screenHeight = rec.height();
 
-    QString font            = "Arial";
+    this->setWindowFlags(Qt::FramelessWindowHint);
+    this->setGeometry(0,screenHeight/2-150,screenWidth,300);
 
-    // load the bitmap for writing some text over it
+
+    QPixmap bgPixmap(screenWidth,300);
+
+    QLinearGradient bgGradient(QPointF(0, 0), QPointF(screenWidth, 0));
+    bgGradient.setColorAt(0, QColor("#191923"));
+	bgGradient.setColorAt(1, QColor("#191923"));
+    //#3c3c3b
+
+    QRect rect_linear(0,0,screenWidth,300);
+
+    QPainter *painter = new QPainter(&bgPixmap);
+    painter->fillRect(rect_linear, bgGradient);
+
+    painter->end();
+
+    bg = new QLabel(this);
+    bg->setPixmap(bgPixmap);
+
+
+    bg->setGeometry(0,0,screenWidth,300);
+
+    splashImage = new QLabel(this);
     QPixmap newPixmap;
     if(GetBoolArg("-testnet")) {
-        newPixmap     = QPixmap(":/images/splash_testnet");
+        newPixmap.load(":/images/splash_testnet");
     }
     else {
-        newPixmap     = QPixmap(":/images/splash");
+        newPixmap.load(":/images/splash");
     }
 
-    QPainter pixPaint(&newPixmap);
-    pixPaint.setPen(QColor(70,70,70));
 
-    pixPaint.setFont(QFont(font, 9*fontFactor));
-    pixPaint.drawText(paddingLeftCol2,paddingTopCol2+line4,versionText);
+    splashImage->setPixmap(newPixmap);
+    splashImage->move(screenWidth/2-567/2,50);
 
-    // draw copyright stuff
-    pixPaint.setFont(QFont(font, 9*fontFactor));
-    pixPaint.drawText(paddingLeftCol2,paddingTopCol2+line1,copyrightText1);
-    pixPaint.drawText(paddingLeftCol2,paddingTopCol2+line2,copyrightText2);
-    pixPaint.drawText(paddingLeftCol2,paddingTopCol2+line3,copyrightText3);
 
-    pixPaint.end();
+    QFont smallFont; smallFont.setPixelSize(12);
 
-    this->setPixmap(newPixmap);
+    versionLabel = new QLabel(this);
+    versionLabel->setStyleSheet("QLabel { color: #3C3C3B; }");
+    versionLabel->setFont(smallFont);
+    versionLabel->setText(QString::fromStdString(FormatFullVersion()).split("-")[0]);
+    versionLabel->setFixedSize(1000,30);
+    versionLabel->move(screenWidth/2-108,220);
+
+
+    QFont largeFont; largeFont.setPixelSize(20);
+
+    label = new QLabel(this);
+    label->setStyleSheet("QLabel { color: #FFFFFF; }");
+    label->setFont(largeFont);
+    label->setText("...");
+    label->setFixedSize(1000,30);
+    label->move(screenWidth/2-108,260);
+
+}
+
+SplashScreen::~SplashScreen()
+{
 }

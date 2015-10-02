@@ -6,7 +6,7 @@ ChipCoin is a X11 PoW based cryptocurrency.
 60 Second Blocks
 KGW Difficulty retarget
 
-Blockexplorer : http://chip.blockpioneers.pw
+Blockbrowser : http://chip.blockpioneers.pw
 
 
 Development process

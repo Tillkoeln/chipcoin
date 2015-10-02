@@ -4,13 +4,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About ChipCoin</source>
-        <translation>Informatio de ChipCoin</translation>
+        <source>About DarkCoin</source>
+        <translation>Informatio de DarkCoin</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;ChipCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;ChipCoin&lt;/b&gt; versio</translation>
+        <source>&lt;b&gt;DarkCoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;DarkCoin&lt;/b&gt; versio</translation>
     </message>
     <message>
         <location line="+57"/>
@@ -33,8 +33,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="+0"/>
-        <source>The ChipCoin developers</source>
-        <translation>ChipCoin curatores</translation>
+        <source>The DarkCoin developers</source>
+        <translation>DarkCoin curatores</translation>
     </message>
 </context>
 <context>
@@ -66,8 +66,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+63"/>
-        <source>These are your ChipCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Haec sunt inscriptiones ChipCoin tuae pro accipendo pensitationes.  Cupias variam ad quemque mittentem dare ut melius scias quem tibi pensare.</translation>
+        <source>These are your DarkCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Haec sunt inscriptiones DarkCoin tuae pro accipendo pensitationes.  Cupias variam ad quemque mittentem dare ut melius scias quem tibi pensare.</translation>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="+14"/>
@@ -81,8 +81,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a ChipCoin address</source>
-        <translation>Signa nuntium ut demonstres inscriptionem ChipCoin a te possessam esse</translation>
+        <source>Sign a message to prove you own a DarkCoin address</source>
+        <translation>Signa nuntium ut demonstres inscriptionem DarkCoin a te possessam esse</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -106,8 +106,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="-44"/>
-        <source>Verify a message to ensure it was signed with a specified ChipCoin address</source>
-        <translation>Verifica nuntium ut cures signatum esse cum specificata inscriptione ChipCoin</translation>
+        <source>Verify a message to ensure it was signed with a specified DarkCoin address</source>
+        <translation>Verifica nuntium ut cures signatum esse cum specificata inscriptione DarkCoin</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -121,7 +121,7 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="-5"/>
-        <source>These are your ChipCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your DarkCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Hae sunt inscriptiones mittendi pensitationes.  Semper inspice quantitatem et inscriptionem accipiendi antequam nummos mittis.</translation>
     </message>
     <message>
@@ -247,7 +247,7 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ChipCoinS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR DARKCOINS&lt;/b&gt;!</source>
         <translation>Monitio: Si cassidile tuum cifras et tesseram amittis, tu &lt;b&gt;AMITTES OMNES TUOS NUMMOS BITOS&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -274,8 +274,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="-56"/>
-        <source>ChipCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ChipCoins from being stolen by malware infecting your computer.</source>
-        <translation>ChipCoin iam desinet ut finiat actionem cifrandi.  Memento cassidile cifrare non posse cuncte curare ne tui nummi clepantur ab malis programatibus in tuo computatro.</translation>
+        <source>DarkCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your darkcoins from being stolen by malware infecting your computer.</source>
+        <translation>DarkCoin iam desinet ut finiat actionem cifrandi.  Memento cassidile cifrare non posse cuncte curare ne tui nummi clepantur ab malis programatibus in tuo computatro.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -373,8 +373,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about ChipCoin</source>
-        <translation>Monstra informationem de ChipCoin</translation>
+        <source>Show information about DarkCoin</source>
+        <translation>Monstra informationem de DarkCoin</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -418,13 +418,13 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="-347"/>
-        <source>Send coins to a ChipCoin address</source>
-        <translation>Mitte nummos ad inscriptionem ChipCoin</translation>
+        <source>Send coins to a DarkCoin address</source>
+        <translation>Mitte nummos ad inscriptionem DarkCoin</translation>
     </message>
     <message>
         <location line="+49"/>
-        <source>Modify configuration options for ChipCoin</source>
-        <translation>Muta configurationis optiones pro ChipCoin</translation>
+        <source>Modify configuration options for DarkCoin</source>
+        <translation>Muta configurationis optiones pro DarkCoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -454,8 +454,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     <message>
         <location line="-165"/>
         <location line="+530"/>
-        <source>ChipCoin</source>
-        <translation>ChipCoin</translation>
+        <source>DarkCoin</source>
+        <translation>DarkCoin</translation>
     </message>
     <message>
         <location line="-530"/>
@@ -479,8 +479,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="+22"/>
-        <source>&amp;About ChipCoin</source>
-        <translation>&amp;Informatio de ChipCoin</translation>
+        <source>&amp;About DarkCoin</source>
+        <translation>&amp;Informatio de DarkCoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -499,13 +499,13 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your ChipCoin addresses to prove you own them</source>
-        <translation>Signa nuntios cum tuis inscriptionibus ChipCoin ut demonstres te eas possidere</translation>
+        <source>Sign messages with your DarkCoin addresses to prove you own them</source>
+        <translation>Signa nuntios cum tuis inscriptionibus DarkCoin ut demonstres te eas possidere</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified ChipCoin addresses</source>
-        <translation>Verifica nuntios ut certus sis eos signatos esse cum specificatis inscriptionibus ChipCoin</translation>
+        <source>Verify messages to ensure they were signed with specified DarkCoin addresses</source>
+        <translation>Verifica nuntios ut certus sis eos signatos esse cum specificatis inscriptionibus DarkCoin</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -535,13 +535,13 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="+47"/>
-        <source>ChipCoin client</source>
-        <translation>ChipCoin cliens</translation>
+        <source>DarkCoin client</source>
+        <translation>DarkCoin cliens</translation>
     </message>
     <message numerus="yes">
         <location line="+141"/>
-        <source>%n active connection(s) to ChipCoin network</source>
-        <translation><numerusform>%n activa conexio ad rete ChipCoin</numerusform><numerusform>%n activae conexiones ad rete ChipCoin</numerusform></translation>
+        <source>%n active connection(s) to DarkCoin network</source>
+        <translation><numerusform>%n activa conexio ad rete DarkCoin</numerusform><numerusform>%n activae conexiones ad rete DarkCoin</numerusform></translation>
     </message>
     <message>
         <location line="+22"/>
@@ -655,8 +655,8 @@ Inscriptio: %4
     <message>
         <location line="-23"/>
         <location line="+23"/>
-        <source>URI can not be parsed! This can be caused by an invalid ChipCoin address or malformed URI parameters.</source>
-        <translation>URI intellegi non posse!  Huius causa possit inscriptionem ChipCoin non validam aut URI parametra maleformata.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid DarkCoin address or malformed URI parameters.</source>
+        <translation>URI intellegi non posse!  Huius causa possit inscriptionem DarkCoin non validam aut URI parametra maleformata.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -670,8 +670,8 @@ Inscriptio: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+111"/>
-        <source>A fatal error occurred. ChipCoin can no longer continue safely and will quit.</source>
-        <translation>Error fatalis accidit.  ChipCoin nondum pergere tute potest, et exibit.</translation>
+        <source>A fatal error occurred. DarkCoin can no longer continue safely and will quit.</source>
+        <translation>Error fatalis accidit.  DarkCoin nondum pergere tute potest, et exibit.</translation>
     </message>
 </context>
 <context>
@@ -736,8 +736,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid ChipCoin address.</source>
-        <translation>Inscriptio inserta &quot;%1&quot; non valida inscriptio ChipCoin est.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid DarkCoin address.</source>
+        <translation>Inscriptio inserta &quot;%1&quot; non valida inscriptio DarkCoin est.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -755,8 +755,8 @@ Inscriptio: %4
     <message>
         <location filename="../guiutil.cpp" line="+424"/>
         <location line="+12"/>
-        <source>ChipCoin-Qt</source>
-        <translation>ChipCoin-Qt</translation>
+        <source>DarkCoin-Qt</source>
+        <translation>DarkCoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -818,13 +818,13 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start ChipCoin after logging in to the system.</source>
-        <translation>Pelle ChipCoin per se postquam in systema inire.</translation>
+        <source>Automatically start DarkCoin after logging in to the system.</source>
+        <translation>Pelle DarkCoin per se postquam in systema inire.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start ChipCoin on system login</source>
-        <translation>&amp;Pelle ChipCoin cum inire systema</translation>
+        <source>&amp;Start DarkCoin on system login</source>
+        <translation>&amp;Pelle DarkCoin cum inire systema</translation>
     </message>
     <message>
         <location line="+35"/>
@@ -843,8 +843,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the ChipCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Aperi per se portam clientis ChipCoin in itineratore.  Hoc tantum effectivum est si itineratrum tuum supportat UPnP et id activum est.</translation>
+        <source>Automatically open the DarkCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Aperi per se portam clientis DarkCoin in itineratore.  Hoc tantum effectivum est si itineratrum tuum supportat UPnP et id activum est.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -853,8 +853,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the ChipCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Connecte ad rete ChipCoin per SOCKS vicarium (e.g. quando conectens per Tor).</translation>
+        <source>Connect to the DarkCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Connecte ad rete DarkCoin per SOCKS vicarium (e.g. quando conectens per Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -928,8 +928,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting ChipCoin.</source>
-        <translation>Lingua monstranda utenti hic constitui potest.  Haec configuratio effectiva erit postquam ChipCoin iterum initiatum erit.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting DarkCoin.</source>
+        <translation>Lingua monstranda utenti hic constitui potest.  Haec configuratio effectiva erit postquam DarkCoin iterum initiatum erit.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -943,8 +943,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show ChipCoin addresses in the transaction list or not.</source>
-        <translation>Num monstrare inscriptiones ChipCoin in enumeratione transactionum.</translation>
+        <source>Whether to show DarkCoin addresses in the transaction list or not.</source>
+        <translation>Num monstrare inscriptiones DarkCoin in enumeratione transactionum.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -995,8 +995,8 @@ Inscriptio: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting ChipCoin.</source>
-        <translation>Haec configuratio effectiva erit postquam ChipCoin iterum initiatum erit.</translation>
+        <source>This setting will take effect after restarting DarkCoin.</source>
+        <translation>Haec configuratio effectiva erit postquam DarkCoin iterum initiatum erit.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1014,8 +1014,8 @@ Inscriptio: %4
     <message>
         <location line="+50"/>
         <location line="+166"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ChipCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Monstrata informatio fortasse non recentissima est.  Tuum cassidile per se synchronizat cum rete ChipCoin postquam conexio constabilita est, sed hoc actio nondum perfecta est.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the DarkCoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Monstrata informatio fortasse non recentissima est.  Tuum cassidile per se synchronizat cum rete DarkCoin postquam conexio constabilita est, sed hoc actio nondum perfecta est.</translation>
     </message>
     <message>
         <location line="-124"/>
@@ -1068,8 +1068,8 @@ Inscriptio: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start ChipCoin: click-to-pay handler</source>
-        <translation>ChipCoin incipere non potest: cliccare-ad-pensandum handler</translation>
+        <source>Cannot start darkcoin: click-to-pay handler</source>
+        <translation>DarkCoin incipere non potest: cliccare-ad-pensandum handler</translation>
     </message>
 </context>
 <context>
@@ -1218,8 +1218,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the ChipCoin-Qt help message to get a list with possible ChipCoin command-line options.</source>
-        <translation>Monstra nuntium auxilii ChipCoin-Qt ut videas enumerationem possibilium optionum ChipCoin mandati initiantis.</translation>
+        <source>Show the DarkCoin-Qt help message to get a list with possible DarkCoin command-line options.</source>
+        <translation>Monstra nuntium auxilii DarkCoin-Qt ut videas enumerationem possibilium optionum DarkCoin mandati initiantis.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1238,13 +1238,13 @@ Inscriptio: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>ChipCoin - Debug window</source>
-        <translation>ChipCoin - Fenestra debug</translation>
+        <source>DarkCoin - Debug window</source>
+        <translation>DarkCoin - Fenestra debug</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>ChipCoin Core</source>
-        <translation>ChipCoin Nucleus</translation>
+        <source>DarkCoin Core</source>
+        <translation>DarkCoin Nucleus</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1253,8 +1253,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the ChipCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Aperi plicam catalogi de ChipCoin debug ex activo indice datorum.  Hoc possit pauca secunda pro plicis magnis catalogi.</translation>
+        <source>Open the DarkCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Aperi plicam catalogi de DarkCoin debug ex activo indice datorum.  Hoc possit pauca secunda pro plicis magnis catalogi.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1263,8 +1263,8 @@ Inscriptio: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-30"/>
-        <source>Welcome to the ChipCoin RPC console.</source>
-        <translation>Bene ventio in terminale RPC de ChipCoin.</translation>
+        <source>Welcome to the DarkCoin RPC console.</source>
+        <translation>Bene ventio in terminale RPC de DarkCoin.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1406,8 +1406,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+34"/>
-        <source>The address to send the payment to (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Inscriptio cui mittere pensitationem (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>The address to send the payment to (e.g. Ch1pHNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Inscriptio cui mittere pensitationem (e.g. Ch1pHNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -1447,8 +1447,8 @@ Inscriptio: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a ChipCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Insero inscriptionem ChipCoin (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a DarkCoin address (e.g. Ch1pHNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Insero inscriptionem DarkCoin (e.g. Ch1pHNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
 </context>
 <context>
@@ -1470,8 +1470,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Inscriptio qua signare nuntium (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>The address to sign the message with (e.g. Ch1pHNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Inscriptio qua signare nuntium (e.g. Ch1pHNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1512,8 +1512,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this ChipCoin address</source>
-        <translation>Signa nuntium ut demonstres hanc inscriptionem ChipCoin a te possessa esse</translation>
+        <source>Sign the message to prove you own this DarkCoin address</source>
+        <translation>Signa nuntium ut demonstres hanc inscriptionem DarkCoin a te possessa esse</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1543,13 +1543,13 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Inscriptio qua nuntius signatus est (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>The address the message was signed with (e.g. Ch1pHNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Inscriptio qua nuntius signatus est (e.g. Ch1pHNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified ChipCoin address</source>
-        <translation>Verifica nuntium ut cures signatum esse cum specifica inscriptione ChipCoin</translation>
+        <source>Verify the message to ensure it was signed with the specified DarkCoin address</source>
+        <translation>Verifica nuntium ut cures signatum esse cum specifica inscriptione DarkCoin</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1564,8 +1564,8 @@ Inscriptio: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a ChipCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Insere inscriptionem ChipCoin (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a DarkCoin address (e.g. Ch1pHNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Insere inscriptionem DarkCoin (e.g. Ch1pHNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1574,8 +1574,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter ChipCoin signature</source>
-        <translation>Insere signationem ChipCoin</translation>
+        <source>Enter DarkCoin signature</source>
+        <translation>Insere signationem DarkCoin</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -1648,8 +1648,8 @@ Inscriptio: %4
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+22"/>
-        <source>The ChipCoin developers</source>
-        <translation>ChipCoin curatores</translation>
+        <source>The DarkCoin developers</source>
+        <translation>DarkCoin curatores</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2186,8 +2186,8 @@ Inscriptio: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+94"/>
-        <source>ChipCoin version</source>
-        <translation>Versio de ChipCoin</translation>
+        <source>DarkCoin version</source>
+        <translation>Versio de DarkCoin</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2196,8 +2196,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or ChipCoind</source>
-        <translation>Mitte mandatum ad -server vel ChipCoind</translation>
+        <source>Send command to -server or darkcoind</source>
+        <translation>Mitte mandatum ad -server vel darkcoind</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2216,13 +2216,13 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: ChipCoin.conf)</source>
-        <translation>Specifica configurationis plicam (praedefinitum: ChipCoin.conf)</translation>
+        <source>Specify configuration file (default: darkcoin.conf)</source>
+        <translation>Specifica configurationis plicam (praedefinitum: darkcoin.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: ChipCoind.pid)</source>
-        <translation>Specifica pid plicam (praedefinitum: ChipCoin.pid)</translation>
+        <source>Specify pid file (default: darkcoind.pid)</source>
+        <translation>Specifica pid plicam (praedefinitum: darkcoin.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2299,24 +2299,24 @@ Inscriptio: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=ChipCoinrpc
+rpcuser=darkcoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;ChipCoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;DarkCoin Alert&quot; admin@foo.com
 </source>
         <translation>%s, necesse est te rpcpassword constituere in plica configurationis:
 %s
 Hortatur te hanc fortuitam tesseram uti:
-rpcuser=ChipCoinrpc
+rpcuser=darkcoinrpc
 rpcpassword=%s
 (non est necesse te hanc tesseram meminisse)
 Nomen usoris et tessera eadem esse NON POSSUNT.
 Si plica non existit, eam crea cum permissionibus ut eius dominus tantum sinitur id legere.
 Quoque hortatur alertnotify constituere ut tu notificetur de problematibus;
-exempli gratia: alertnotify=echo %%s | mail -s &quot;ChipCoin Notificatio&quot; admin@foo.com
+exempli gratia: alertnotify=echo %%s | mail -s &quot;DarkCoin Notificatio&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -2331,8 +2331,8 @@ exempli gratia: alertnotify=echo %%s | mail -s &quot;ChipCoin Notificatio&quot; 
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. ChipCoin is probably already running.</source>
-        <translation>Non posse serare datorum indicem %s.  ChipCoin probabiliter iam operatur.</translation>
+        <source>Cannot obtain a lock on data directory %s. DarkCoin is probably already running.</source>
+        <translation>Non posse serare datorum indicem %s.  DarkCoin probabiliter iam operatur.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2376,8 +2376,8 @@ exempli gratia: alertnotify=echo %%s | mail -s &quot;ChipCoin Notificatio&quot; 
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong ChipCoin will not work properly.</source>
-        <translation>Monitio: Sodes cura ut dies tempusque computatri tui recti sunt!  Si horologium tuum pravum est, ChipCoin non proprie fungetur.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong DarkCoin will not work properly.</source>
+        <translation>Monitio: Sodes cura ut dies tempusque computatri tui recti sunt!  Si horologium tuum pravum est, DarkCoin non proprie fungetur.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2626,8 +2626,8 @@ exempli gratia: alertnotify=echo %%s | mail -s &quot;ChipCoin Notificatio&quot; 
     </message>
     <message>
         <location line="+5"/>
-        <source>SSL options: (see the ChipCoin Wiki for SSL setup instructions)</source>
-        <translation>Optiones SSL: (vide vici de ChipCoin pro instructionibus SSL configurationis)</translation>
+        <source>SSL options: (see the DarkCoin Wiki for SSL setup instructions)</source>
+        <translation>Optiones SSL: (vide vici de DarkCoin pro instructionibus SSL configurationis)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2816,13 +2816,13 @@ exempli gratia: alertnotify=echo %%s | mail -s &quot;ChipCoin Notificatio&quot; 
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of ChipCoin</source>
-        <translation>Error legendi wallet.dat: Cassidili necesse est recentior versio ChipCoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of DarkCoin</source>
+        <translation>Error legendi wallet.dat: Cassidili necesse est recentior versio DarkCoin</translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>Wallet needed to be rewritten: restart ChipCoin to complete</source>
-        <translation>Cassidili necesse erat rescribi: Repelle ChipCoin ut compleas</translation>
+        <source>Wallet needed to be rewritten: restart DarkCoin to complete</source>
+        <translation>Cassidili necesse erat rescribi: Repelle DarkCoin ut compleas</translation>
     </message>
     <message>
         <location line="-95"/>
@@ -2881,8 +2881,8 @@ exempli gratia: alertnotify=echo %%s | mail -s &quot;ChipCoin Notificatio&quot; 
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. ChipCoin is probably already running.</source>
-        <translation>Non posse conglutinare ad %s in hoc cumputatro.  ChipCoin probabiliter iam operatur.</translation>
+        <source>Unable to bind to %s on this computer. DarkCoin is probably already running.</source>
+        <translation>Non posse conglutinare ad %s in hoc cumputatro.  DarkCoin probabiliter iam operatur.</translation>
     </message>
     <message>
         <location line="+64"/>

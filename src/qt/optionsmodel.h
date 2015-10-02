@@ -3,7 +3,6 @@
 
 #include <QAbstractListModel>
 
-
 /** Interface from Qt to configuration data structure for Bitcoin client.
    To Qt, the options are presented as a list with the different options
    laid out vertically.
@@ -15,7 +14,6 @@ class OptionsModel : public QAbstractListModel
     Q_OBJECT
 
 public:
-
     explicit OptionsModel(QObject *parent = 0);
 
     enum OptionID {

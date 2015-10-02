@@ -10,6 +10,7 @@
 
 #include <QMap>
 #include <QMessageBox>
+#include <QDebug>
 
 WalletStack::WalletStack(QWidget *parent) :
     QStackedWidget(parent),
@@ -33,6 +34,7 @@ bool WalletStack::addWallet(const QString& name, WalletModel *walletModel)
     walletView->setBitcoinGUI(gui);
     walletView->setClientModel(clientModel);
     walletView->setWalletModel(walletModel);
+    walletView->showOutOfSyncWarning(bOutOfSync);
     addWidget(walletView);
     mapWalletViews[name] = walletView;
 
@@ -66,6 +68,13 @@ bool WalletStack::handleURI(const QString &uri)
     return walletView->handleURI(uri);
 }
 
+void WalletStack::showOutOfSyncWarning(bool fShow)
+{
+    bOutOfSync = fShow;
+    QMap<QString, WalletView*>::const_iterator i;
+    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
+        i.value()->showOutOfSyncWarning(fShow);
+}
 
 void WalletStack::gotoOverviewPage()
 {
@@ -80,6 +89,7 @@ void WalletStack::gotoHistoryPage()
     for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
         i.value()->gotoHistoryPage();
 }
+
 
 void WalletStack::gotoAddressBookPage()
 {
@@ -100,6 +110,20 @@ void WalletStack::gotoSendCoinsPage(QString addr)
     QMap<QString, WalletView*>::const_iterator i;
     for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
         i.value()->gotoSendCoinsPage(addr);
+}
+
+void WalletStack::gotoMiningPage()
+{
+    QMap<QString, WalletView*>::const_iterator i;
+    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
+        i.value()->gotoMiningPage();
+}
+
+void WalletStack::gotoMiningInfoPage()
+{
+    QMap<QString, WalletView*>::const_iterator i;
+    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
+        i.value()->gotoMiningInfoPage();
 }
 
 void WalletStack::gotoSignMessageTab(QString addr)
@@ -150,4 +174,13 @@ void WalletStack::setCurrentWallet(const QString& name)
     WalletView *walletView = mapWalletViews.value(name);
     setCurrentWidget(walletView);
     walletView->setEncryptionStatus();
+}
+
+void WalletStack::updatePlot()
+{
+    //we can't be sure that the view has loaded, so this needs
+    //to be loaded in a manner that fails gracefully
+    QMap<QString, WalletView*>::const_iterator i;
+    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
+        i.value()->updatePlot();
 }
