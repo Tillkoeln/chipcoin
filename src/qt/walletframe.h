@@ -32,7 +32,11 @@ public:
 
     bool handleURI(const QString &uri);
 
+    void showOutOfSyncWarning(bool fShow);
 
+    void resizeIt();
+
+    void stretchStack(int x, int y, int width, int height);
 private:
     BitcoinGUI *gui;
     ClientModel *clientModel;
@@ -51,6 +55,10 @@ public slots:
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "");
+    /** Switch to mining page */
+    void gotoMiningPage();
+    /** Switch to mining info page */
+    void gotoMiningInfoPage();
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");
@@ -71,6 +79,12 @@ public slots:
      @see WalletModel::EncryptionStatus
      */
     void setEncryptionStatus();
+
+    /** Update the plot on the overview (home) page */
+    void updatePlot();
+
+    /** */
+    void resizeWhenFinished();
 };
 
 #endif // WALLETFRAME_H

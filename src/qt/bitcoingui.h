@@ -4,9 +4,7 @@
 #include <QMainWindow>
 #include <QSystemTrayIcon>
 #include <QMap>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QToolButton>
+#include <QFrame>
 
 class TransactionTableModel;
 class WalletFrame;
@@ -21,6 +19,10 @@ class SendCoinsDialog;
 class SignVerifyMessageDialog;
 class Notificator;
 class RPCConsole;
+class BlockBrowser;
+class MiningInfoPage;
+class MiningPage;
+class GuiHeader;
 
 class CWallet;
 
@@ -33,6 +35,7 @@ class QUrl;
 class QListWidget;
 class QPushButton;
 class QAction;
+class QToolButton;
 QT_END_NAMESPACE
 
 /**
@@ -63,16 +66,6 @@ public:
 
     void removeAllWallets();
 
-    void fillWalletModelInfo(WalletModel *walletModel);
-
-    void changeBackgroundImage(int type);
-
-    void controlVPN();
-
-    void getVPNProxy();
-
-    void setVPNToolTip(QString appProxy, QString socks);
-
     /** Used by WalletView to allow access to needed QActions */
     // Todo: Use Qt signals for these
     QAction * getOverviewAction() { return overviewAction; }
@@ -81,55 +74,69 @@ public:
     QAction * getReceiveCoinsAction() { return receiveCoinsAction; }
     QAction * getSendCoinsAction() { return sendCoinsAction; }
 
+    QAction * getMiningInfoAction() { return miningInfoAction; }
+    QAction * getMiningAction() { return miningAction; }
+
+    QToolButton *getSendCoinsButton(){ return sendCoinsButton; }
+    QToolButton *getReceiveCoinsButton(){ return receiveCoinsButton; }
+    QToolButton *getHistoryButton(){ return historyButton; }
+    QToolButton *getAddressBookButton(){ return addressBookButton; }
+
+    QToolButton *getMiningInfoButton(){ return miningInfoButton; }
+    QToolButton *getMiningCPUButton(){ return miningCPUButton; }
+
+    QWidget *categoryContainer;
+
+    QToolButton * overviewCategory;
+    QToolButton * walletCategory;
+    QToolButton * miningCategory;
+    QToolButton * settingsCategory;
+
+    void setMiningCategoryChecked(bool);
+    void setWalletCategoryChecked(bool);
+
+    QWidget *walletButtonContainer;
+    QWidget *miningButtonContainer;
+
+    GuiHeader *guiHeader;
+
+    /** FadeIn/Out Wallet Buttons */
+    void fadeWalletButtons(QString way);
+    /** FadeIn/Out Mining Buttons */
+    void fadeMiningButtons(QString way);
+    /** stretch main ui container depending im subcategories visible or not**/
+    void stretchStack();
+
+    /** receives from walletview.cpp **/
+    void externCommand(const QString &command);
+
+    QSystemTrayIcon *trayIcon;
+
 protected:
     void changeEvent(QEvent *e);
     void closeEvent(QCloseEvent *event);
     void dragEnterEvent(QDragEnterEvent *event);
     void dropEvent(QDropEvent *event);
     bool eventFilter(QObject *object, QEvent *event);
+    void resizeEvent(QResizeEvent *event);
 
 private:
     ClientModel *clientModel;
     WalletFrame *walletFrame;
 
-    QWidget *menuBarWidget;
-    QMenuBar *appMenuBar;
-    QHBoxLayout *menuBarLayout;
-    QVBoxLayout *headerLayout;
-    QWidget *headerWidget;
-    QWidget *infoWidget;
-    QHBoxLayout *infoLayout;
-    QToolBar *appToolBar;
-
-    QVBoxLayout *unconfirmedInfoLayout;
-    QHBoxLayout *unconfirmedLayout;
-    QLabel *unconfirmedHeaderLabel;
-    QLabel *unconfirmedInfoLabel1;
-    QLabel *unconfirmedInfoLabel2;
-
-    QVBoxLayout *balancedInfoLayout;
-    QHBoxLayout *balancedLayout;
-    QLabel *balancedHeaderLabel;
-    QLabel *balancedInfoLabel1;
-    QLabel *balancedInfoLabel2;
-
-    QToolButton *overWiewButton;
-    QToolButton *sendButton;
-    QToolButton *receiveButton;
-    QToolButton *transactionsButton;
-    QToolButton *addressBookButton;
-
     QLabel *labelEncryptionIcon;
     QLabel *labelConnectionsIcon;
     QLabel *labelBlocksIcon;
-    //QLabel *labelVPNIcon;
     QLabel *progressBarLabel;
     QProgressBar *progressBar;
-	
+
+    QMenuBar *appMenuBar;
     QAction *overviewAction;
     QAction *historyAction;
     QAction *quitAction;
+
     QAction *sendCoinsAction;
+
     QAction *addressBookAction;
     QAction *signMessageAction;
     QAction *verifyMessageAction;
@@ -142,26 +149,42 @@ private:
     QAction *changePassphraseAction;
     QAction *aboutQtAction;
     QAction *openRPCConsoleAction;
+    QAction *openInfoAction;
+    QAction *openBlockBrowserAction;
 
-    QSystemTrayIcon *trayIcon;
+
+    QFrame *separatorLineLeft;
+    QFrame *separatorLineBottom;
+
+    QToolButton *sendCoinsButton;
+    QToolButton *receiveCoinsButton;
+    QToolButton *historyButton;
+    QToolButton *addressBookButton;
+    QToolButton *backupButton;
+
+    QAction *miningInfoAction;
+    QAction *miningAction;
+
+    QToolButton *miningInfoButton;
+    QToolButton *miningCPUButton;
+
     Notificator *notificator;
     TransactionView *transactionView;
     RPCConsole *rpcConsole;
+    BlockBrowser* blockBrowser;
 
     QMovie *syncIconMovie;
     /** Keep track of previous number of blocks, to detect progress */
     int prevBlocks;
 
+    /** Create Header section that contains logo, wallet info, recent events and network */
+    void createHeader();
+    /** Create the main categories. */
+    void createCategories();
     /** Create the main UI actions. */
     void createActions();
-    /** Create the menu header*/
-    void createHeader();
-    /** Create the info widget*/
-    void createInfoWidget();
     /** Create the menu bar and sub-menus. */
     void createMenuBar();
-    /** Create the toolbars */
-    void createToolBars();
     /** Create system tray icon and notification */
     void createTrayIcon();
     /** Create system tray menu (or setup the dock menu) */
@@ -206,25 +229,32 @@ public slots:
     /** Show incoming transaction notification for new transactions. */
     void incomingTransaction(const QString& date, int unit, qint64 amount, const QString& type, const QString& address);
 
-private slots:
     /** Switch to overview (home) page */
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
     /** Switch to address book page */
     void gotoAddressBookPage();
+   
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "");
+    /** Switch to mining page */
+    void gotoMiningInfoPage();
+    /** Switch to mining page */
+    void gotoMiningPage();
+
+    /** Show configuration dialog */
+    void optionsClicked();
+
+private slots:
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
 
-    /** Show configuration dialog */
-    void optionsClicked();
     /** Show about dialog */
     void aboutClicked();
 #ifndef Q_OS_MAC

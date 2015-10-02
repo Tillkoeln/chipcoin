@@ -1,131 +1,103 @@
 #include "overviewpage.h"
 #include "ui_overviewpage.h"
 
-#include "clientmodel.h"
-#include "walletmodel.h"
-#include "bitcoinunits.h"
-#include "optionsmodel.h"
-#include "transactiontablemodel.h"
-#include "transactionfilterproxy.h"
-#include "guiutil.h"
-#include "guiconstants.h"
+#include "bitcoingui.h"
 
-#include <QAbstractItemDelegate>
-#include <QPainter>
+#include "guiheader.h"
 
-#define DECORATION_SIZE 64
-#define NUM_ITEMS 3
+#include <QDebug>
 
-class TxViewDelegate : public QAbstractItemDelegate
-{
-    Q_OBJECT
-public:
-    TxViewDelegate(): QAbstractItemDelegate(), unit(BitcoinUnits::BTC)
-    {
-
-    }
-
-    inline void paint(QPainter *painter, const QStyleOptionViewItem &option,
-                      const QModelIndex &index ) const
-    {
-        painter->save();
-
-        QIcon icon = qvariant_cast<QIcon>(index.data(Qt::DecorationRole));
-        QRect mainRect = option.rect;
-        QRect decorationRect(mainRect.topLeft(), QSize(DECORATION_SIZE, DECORATION_SIZE));
-        int xspace = DECORATION_SIZE + 8;
-        int ypad = 6;
-        int halfheight = (mainRect.height() - 2*ypad)/2;
-        QRect amountRect(mainRect.left() + xspace, mainRect.top()+ypad, mainRect.width() - xspace, halfheight);
-        QRect addressRect(mainRect.left() + xspace, mainRect.top()+ypad+halfheight, mainRect.width() - xspace, halfheight);
-        icon.paint(painter, decorationRect);
-
-        QDateTime date = index.data(TransactionTableModel::DateRole).toDateTime();
-        QString address = index.data(Qt::DisplayRole).toString();
-        qint64 amount = index.data(TransactionTableModel::AmountRole).toLongLong();
-        bool confirmed = index.data(TransactionTableModel::ConfirmedRole).toBool();
-        QVariant value = index.data(Qt::ForegroundRole);
-        QColor foreground = option.palette.color(QPalette::Text);
-        if(value.canConvert<QBrush>())
-        {
-            QBrush brush = qvariant_cast<QBrush>(value);
-            foreground = brush.color();
-        }
-
-        painter->setPen(foreground);
-        painter->drawText(addressRect, Qt::AlignLeft|Qt::AlignTop, address);
-
-        if(amount < 0)
-        {
-            foreground = COLOR_NEGATIVE;
-        }
-        else if(!confirmed)
-        {
-            foreground = COLOR_UNCONFIRMED;
-        }
-        else
-        {
-            foreground = option.palette.color(QPalette::Text);
-        }
-        painter->setPen(foreground);
-        painter->setFont(QFont("Magistral Bold", 11));
-        QString amountText = BitcoinUnits::formatWithUnit(unit, amount, true);
-        if(!confirmed)
-        {
-            amountText = QString("[") + amountText + QString("]");
-        }
-        painter->drawText(amountRect, Qt::AlignLeft|Qt::AlignBottom, amountText);
-
-        painter->setPen(QColor(64, 64, 64, 255));
-        painter->setFont(QFont("Magistral Bold", 9));
-        painter->drawText(amountRect, Qt::AlignRight|Qt::AlignBottom, GUIUtil::dateTimeStr(date));
-
-        painter->restore();
-    }
-
-    inline QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
-    {
-        return QSize(DECORATION_SIZE, DECORATION_SIZE);
-    }
-
-    int unit;
-
-};
-#include "overviewpage.moc"
-
-OverviewPage::OverviewPage(QWidget *parent) :
+OverviewPage::OverviewPage(QWidget *parent, BitcoinGUI *_gui):
     QWidget(parent),
-    ui(new Ui::OverviewPage),
-    clientModel(0),
-    walletModel(0),
-    currentBalance(-1),
-    currentUnconfirmedBalance(-1),
-    currentImmatureBalance(-1),
-    txdelegate(new TxViewDelegate()),
-    filter(0)
+    gui(_gui),
+    ui(new Ui::OverviewPage)
 {
     ui->setupUi(this);
 
-    // Recent transactions
-    ui->listTransactions->setItemDelegate(txdelegate);
-    ui->listTransactions->setIconSize(QSize(DECORATION_SIZE, DECORATION_SIZE));
-    ui->listTransactions->setMinimumHeight(NUM_ITEMS * (DECORATION_SIZE + 2));
-    ui->listTransactions->setAttribute(Qt::WA_MacShowFocusRect, false);
+    //#a13469 #6c3d94
 
-    connect(ui->listTransactions, SIGNAL(clicked(QModelIndex)), this, SLOT(handleTransactionClicked(QModelIndex)));
-}
+    ui->labelIntroText->setStyleSheet(".QLabel{color:#000000; border: 1px solid black;background-color: #87878D; padding:10px;}");
+    ui->labelIntroText->setText("<b>Welcome back to your own private Chipcoin bank! - "
+                                ""
+                                "Don't forget to back-up your wallet on a regular basis.</b>");
+#ifdef Q_OS_WIN32
+    ui->labelIntroText->setFixedHeight(50);
+#else
+    ui->labelIntroText->setFixedHeight(60);
+#endif
 
-void OverviewPage::getBitCoinsGUI(BitcoinGUI *bitCoinsGUI){
-    gui = bitCoinsGUI;
-}
+    ClickableLabel *JumpSelector = new ClickableLabel();//Label(this);
+    ClickableLabel *JumpSelector2 = new ClickableLabel();
+    ClickableLabel *JumpSelector3 = new ClickableLabel();
 
-void OverviewPage::handleTransactionClicked(const QModelIndex &index)
-{
-    if(filter){
-        emit transactionClicked(filter->mapToSource(index));
-        gui->changeBackgroundImage(3);
-    }
 
+    JumpSelector->setStyleSheet(".ClickableLabel{background-color: #87878D; border: none; border-radius: 10px; padding:10px;}");
+    JumpSelector2->setStyleSheet(".ClickableLabel{background-color: #87878D; border: none; border-radius: 10px; padding:10px;}");
+    JumpSelector3->setStyleSheet(".ClickableLabel{background-color: #87878D; border: none; border-radius: 10px; padding:10px;}");
+
+
+    JumpSelector->setWordWrap(true);
+    JumpSelector2->setWordWrap(true);
+    JumpSelector3->setWordWrap(true);
+
+
+    JumpSelector->setCursor(QCursor(Qt::PointingHandCursor));
+    JumpSelector2->setCursor(QCursor(Qt::PointingHandCursor));
+    JumpSelector3->setCursor(QCursor(Qt::PointingHandCursor));
+
+
+    JumpSelector->setText("<span style='font-size:12pt; color:#FFFFFF;'><b>Chip Bank</b></span><br><br>"
+                   "<span style='font-size:10pt; color:#FFFFFF;'>Your Private Wallet.</span>");
+    JumpSelector2->setText("<span style='font-size:12pt; color:#FFFFFF;'><b>Mining</b></span><br><br>"
+                    "<span style='font-size:10pt; color:#FFFFFF;'>Network Information And Mining Panel</span>");
+    JumpSelector3->setText("<span style='font-size:12pt; color:#FFFFFF;'><b>Configuration</b></span><br><br>"
+                    "<span style='font-size:10pt; color:#FFFFFF;'>Customize The Wallet To Your Own Needs.</span>");
+
+    JumpSelector->setAlignment(Qt::AlignCenter);
+    JumpSelector2->setAlignment(Qt::AlignCenter);
+    JumpSelector3->setAlignment(Qt::AlignCenter);
+
+
+    JumpSelector->setFixedWidth(200);
+    JumpSelector->setMinimumHeight(100);
+    JumpSelector2->setFixedWidth(200);
+    JumpSelector2->setMinimumHeight(100);
+    JumpSelector3->setFixedWidth(200);
+    JumpSelector3->setMinimumHeight(100);
+
+
+    ui->gridLayout->addWidget(JumpSelector,0,0,Qt::AlignCenter);
+  
+    ui->gridLayout->addWidget(JumpSelector2,0,1,Qt::AlignCenter);
+    ui->gridLayout->addWidget(JumpSelector3,0,2,Qt::AlignCenter);
+
+    connect(JumpSelector, SIGNAL(clicked()), this,SLOT(gotoSendCoinsPage()));
+    connect(JumpSelector2, SIGNAL(clicked()), this,SLOT(gotoMiningInfoPage()));
+    connect(JumpSelector3, SIGNAL(clicked()), this,SLOT(gotoSettings()));
+
+
+    ui->linkLabel1->setStyleSheet(".QLabel{color:#FFFFFF; background-color: #87878D; border: none; border-radius: 10px; padding:10px;}");
+    ui->linkLabel2->setStyleSheet(".QLabel{color:#FFFFFF; background-color: #87878D; border: none; border-radius: 10px; padding:10px;}");
+    ui->linkLabel3->setStyleSheet(".QLabel{color:#FFFFFF; background-color: #87878D; border: none; border-radius: 10px; padding:10px;}");	
+
+    ui->linkLabel1->setOpenExternalLinks(true);
+    ui->linkLabel2->setOpenExternalLinks(true);
+    ui->linkLabel3->setOpenExternalLinks(true);
+
+    ui->linkLabel1->setTextFormat(Qt::RichText);
+
+    ui->linkLabel1->setText("<a style='text-decoration:none; ' href='http://www.chipcoin.info'>"
+                            "<span style='font-size:12pt; font-weight:300; color:#FFFFFF;'><b>Official Chipcoin Website</b></span><br>"
+                            "<span style='font-size:8pt; font-weight:300; color:#FFFFFF;'>Home For All Your Needs</span>"
+                            "</a>");
+    ui->linkLabel2->setText("<a style='text-decoration:none; ' href='https://bitcointalk.org/index.php?topic=1188983.0'>"
+                            "<span style='font-size:12pt; font-weight:300; color:#FFFFFF;'><b>Bitcointalk.org Discussion Thread</b></span><br>"
+                            "<span style='font-size:8pt; font-weight:300; color:#FFFFFF;'>Community Discussions And Support Thread</span>"
+                            "</a>");
+    ui->linkLabel3->setText("<a style='text-decoration:none; ' href='http://chip.blockpioneers.pw'>"
+                            "<span style='font-size:12pt; font-weight:300; color:#FFFFFF;'><b>Block Explorer</b></span><br>"
+                            "<span style='font-size:8pt; font-weight:300; color:#FFFFFF;'>Transactions And Richlist</span>"
+                            "</a>");
 }
 
 OverviewPage::~OverviewPage()
@@ -133,65 +105,20 @@ OverviewPage::~OverviewPage()
     delete ui;
 }
 
-void OverviewPage::setBalance()
+void OverviewPage::gotoSendCoinsPage()
 {
-    gui->fillWalletModelInfo(walletModel);
+
+    gui->gotoSendCoinsPage();
 }
 
-void OverviewPage::setClientModel(ClientModel *model)
+
+
+void OverviewPage::gotoMiningInfoPage()
 {
-    this->clientModel = model;
-    if(model)
-    {
-        // Show warning if this is a prerelease version
-        connect(model, SIGNAL(alertsChanged(QString)), this, SLOT(updateAlerts(QString)));
-        updateAlerts(model->getStatusBarWarnings());
-    }
+    gui->gotoMiningInfoPage();
 }
 
-void OverviewPage::setWalletModel(WalletModel *model)
+void OverviewPage::gotoSettings()
 {
-    this->walletModel = model;
-    if(model && model->getOptionsModel())
-    {
-        // Set up transaction list
-        filter = new TransactionFilterProxy();
-        filter->setSourceModel(model->getTransactionTableModel());
-        filter->setLimit(NUM_ITEMS);
-        filter->setDynamicSortFilter(true);
-        filter->setSortRole(Qt::EditRole);
-        filter->sort(TransactionTableModel::Status, Qt::DescendingOrder);
-
-        ui->listTransactions->setModel(filter);
-        ui->listTransactions->setModelColumn(TransactionTableModel::ToAddress);
-
-        // Keep up to date with wallet
-        setBalance();
-        connect(model, SIGNAL(balanceChanged(qint64, qint64, qint64)), this, SLOT(setBalance()));
-
-        connect(model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
-    }
-
-    // update the display unit, to not use the default ("BTC")
-    updateDisplayUnit();
-}
-
-void OverviewPage::updateDisplayUnit()
-{
-    if(walletModel && walletModel->getOptionsModel())
-    {
-        if(currentBalance != -1)
-            setBalance();
-
-        // Update txdelegate->unit with the current unit
-        txdelegate->unit = walletModel->getOptionsModel()->getDisplayUnit();
-
-        ui->listTransactions->update();
-    }
-}
-
-void OverviewPage::updateAlerts(const QString &warnings)
-{
-    this->ui->labelAlerts->setVisible(!warnings.isEmpty());
-    this->ui->labelAlerts->setText(warnings);
+    gui->optionsClicked();
 }

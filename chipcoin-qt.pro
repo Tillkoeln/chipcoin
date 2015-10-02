@@ -1,7 +1,7 @@
 TEMPLATE = app
 TARGET = ChipCoin-qt
 macx:TARGET = "ChipCoin-Qt"
-VERSION = 1.0.0.0
+VERSION = 2.0.0.1
 INCLUDEPATH += src src/json src/qt
 QT += core gui network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -230,6 +230,7 @@ HEADERS += src/qt/bitcoingui.h \
     src/limitedmap.h \
     src/qt/macnotificationhandler.h \
     src/qt/splashscreen.h \
+	src/qt/qcustomplot.h \
     src/hashblock.h \
     src/sph_blake.h \
     src/sph_skein.h \
@@ -242,7 +243,10 @@ HEADERS += src/qt/bitcoingui.h \
     src/sph_cubehash.h \
     src/sph_echo.h \
     src/sph_shavite.h \
-    src/sph_simd.h
+    src/sph_simd.h \
+    src/qt/miningpage.h \
+    src/qt/mininginfopage.h \
+    src/qt/guiheader.h \
 
 SOURCES += src/qt/bitcoin.cpp \
     src/qt/bitcoingui.cpp \
@@ -314,6 +318,7 @@ SOURCES += src/qt/bitcoin.cpp \
     src/leveldb.cpp \
     src/txdb.cpp \
     src/qt/splashscreen.cpp \
+    src/qt/qcustomplot.cpp \
     src/blake.c \
     src/bmw.c \
     src/groestl.c \
@@ -324,7 +329,10 @@ SOURCES += src/qt/bitcoin.cpp \
     src/cubehash.c \
     src/shavite.c \
     src/echo.c \
-    src/simd.c
+    src/simd.c \
+    src/qt/miningpage.cpp \
+    src/qt/mininginfopage.cpp \
+    src/qt/guiheader.cpp 
 
 RESOURCES += src/qt/bitcoin.qrc
 
@@ -339,7 +347,9 @@ FORMS += src/qt/forms/sendcoinsdialog.ui \
     src/qt/forms/sendcoinsentry.ui \
     src/qt/forms/askpassphrasedialog.ui \
     src/qt/forms/rpcconsole.ui \
-    src/qt/forms/optionsdialog.ui
+    src/qt/forms/optionsdialog.ui \
+    src/qt/forms/miningpage.ui \
+    src/qt/forms/mininginfopage.ui \
 
 contains(USE_QRCODE, 1) {
 HEADERS += src/qt/qrcodedialog.h

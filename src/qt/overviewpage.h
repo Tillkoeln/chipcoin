@@ -2,56 +2,35 @@
 #define OVERVIEWPAGE_H
 
 #include <QWidget>
-#include "bitcoingui.h"
 
+#include "bitcoingui.h"
 
 namespace Ui {
     class OverviewPage;
 }
-class ClientModel;
-class WalletModel;
-class TxViewDelegate;
-class TransactionFilterProxy;
 
-QT_BEGIN_NAMESPACE
-class QModelIndex;
-QT_END_NAMESPACE
-
-/** Overview ("home") page widget */
 class OverviewPage : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit OverviewPage(QWidget *parent = 0);
+    explicit OverviewPage(QWidget *parent, BitcoinGUI *_gui);
     ~OverviewPage();
 
-    void setClientModel(ClientModel *clientModel);
-    void setWalletModel(WalletModel *walletModel);
-    void getBitCoinsGUI(BitcoinGUI *bitCoinsGUI);
-
 public slots:
-    void setBalance();
+    void gotoSendCoinsPage();
+
+    void gotoMiningInfoPage();
+    void gotoSettings();
 
 signals:
-    void transactionClicked(const QModelIndex &index);
 
 private:
     Ui::OverviewPage *ui;
-    ClientModel *clientModel;
-    WalletModel *walletModel;
-    qint64 currentBalance;
-    qint64 currentUnconfirmedBalance;
-    qint64 currentImmatureBalance;
     BitcoinGUI *gui;
 
-    TxViewDelegate *txdelegate;
-    TransactionFilterProxy *filter;
-
 private slots:
-    void updateDisplayUnit();
-    void handleTransactionClicked(const QModelIndex &index);
-    void updateAlerts(const QString &warnings);
+
 };
 
 #endif // OVERVIEWPAGE_H

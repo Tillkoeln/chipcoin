@@ -23,6 +23,8 @@ class SendCoinsDialog;
 class SignVerifyMessageDialog;
 class Notificator;
 class RPCConsole;
+class MiningPage;
+class MiningInfoPage;
 
 class CWalletManager;
 
@@ -56,6 +58,7 @@ public:
 
     bool handleURI(const QString &uri);
 
+    void showOutOfSyncWarning(bool fShow);
 
 private:
     BitcoinGUI *gui;
@@ -77,6 +80,10 @@ public slots:
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "");
+    /** Switch to mining page */
+    void gotoMiningPage();
+    /** Switch to mining infopage */
+    void gotoMiningInfoPage();
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");
@@ -97,6 +104,9 @@ public slots:
      @see WalletModel::EncryptionStatus
      */
     void setEncryptionStatus();
+
+    /** Update the plot on the overview (home) page */
+    void updatePlot();
 };
 
 #endif // WALLETSTACK_H

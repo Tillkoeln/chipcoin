@@ -18,6 +18,9 @@ class AddressBookPage;
 class SendCoinsDialog;
 class SignVerifyMessageDialog;
 class RPCConsole;
+class MiningPage;
+class MiningInfoPage;
+
 
 QT_BEGIN_NAMESPACE
 class QLabel;
@@ -51,6 +54,8 @@ public:
 
     bool handleURI(const QString &uri);
 
+    void showOutOfSyncWarning(bool fShow);
+
 private:
     BitcoinGUI *gui;
     ClientModel *clientModel;
@@ -61,6 +66,10 @@ private:
     AddressBookPage *addressBookPage;
     AddressBookPage *receiveCoinsPage;
     SendCoinsDialog *sendCoinsPage;
+
+
+    MiningPage *miningPage;
+    MiningInfoPage *miningInfoPage;
     SignVerifyMessageDialog *signVerifyMessageDialog;
 
     TransactionView *transactionView;
@@ -76,6 +85,10 @@ public slots:
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "");
+    /** Switch to mining page */
+    void gotoMiningPage();
+    /** Switch to mining info page */
+    void gotoMiningInfoPage();
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");
@@ -95,8 +108,13 @@ public slots:
     void changePassphrase();
     /** Ask for passphrase to unlock wallet temporarily */
     void unlockWallet();
+   // /** Ask for passphrase to unlock wallet indefinitely */
+   // void unlockWalletIndefinite();
 
     void setEncryptionStatus();
+
+    /** Update the plot on the overview (home) page */
+    void updatePlot();
 
 signals:
     /** Signal that we want to show the main window */

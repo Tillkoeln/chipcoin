@@ -8,31 +8,59 @@
 #include "bitcoingui.h"
 #include "walletstack.h"
 #include "walletview.h"
+#include "guiheader.h"
 
 #include <QHBoxLayout>
 #include <QMessageBox>
 #include <QLabel>
+#include <QPropertyAnimation>
+
+#include <QDebug>
+
 
 WalletFrame::WalletFrame(BitcoinGUI *_gui) :
     QFrame(_gui),
     gui(_gui),
     clientModel(0)
 {
-    // Leave HBox hook for adding a list view later
-    QHBoxLayout *walletFrameLayout = new QHBoxLayout(this);
-    setContentsMargins(0,0,0,0);
     walletStack = new WalletStack(this);
     walletStack->setBitcoinGUI(gui);
-    walletFrameLayout->setContentsMargins(0,0,0,0);
-    walletFrameLayout->addWidget(walletStack);
+    walletStack->setFrameStyle( QFrame::WinPanel | QFrame::Sunken );
 
     QLabel *noWallet = new QLabel(tr("No wallet has been loaded."));
     noWallet->setAlignment(Qt::AlignCenter);
     walletStack->addWidget(noWallet);
+
+    resizeIt();
 }
 
 WalletFrame::~WalletFrame()
 {
+}
+
+void WalletFrame::resizeIt()
+{
+    if(screenId == 0){
+        walletStack->setGeometry(100,120+5,this->width()-105, this->height()-10-120);
+    } else{
+        walletStack->setGeometry(100,120+40+5,this->width()-105, this->height()-10-120-40);
+    }
+}
+
+void WalletFrame::resizeWhenFinished(){
+    resizeIt();
+}
+
+void WalletFrame::stretchStack(int x, int y, int width, int height)
+{
+    QPropertyAnimation *animation = new QPropertyAnimation(walletStack, "geometry");
+        animation->setDuration(100);
+        animation->setStartValue(QRect(walletStack->x(),walletStack->y(),walletStack->width(), walletStack->height()));
+        animation->setEndValue(QRect(x, y, width, height));
+        animation->setEasingCurve(QEasingCurve::InCubic);
+        animation->start();
+
+        connect(animation, SIGNAL(finished()), this, SLOT(resizeWhenFinished()));
 }
 
 void WalletFrame::setClientModel(ClientModel *clientModel)
@@ -67,6 +95,17 @@ bool WalletFrame::handleURI(const QString &uri)
     return walletStack->handleURI(uri);
 }
 
+void WalletFrame::showOutOfSyncWarning(bool fShow)
+{
+    if (!walletStack) {
+        QMessageBox box;
+        box.setText("walletStack is null");
+        box.exec();
+        return;
+    }
+    walletStack->showOutOfSyncWarning(fShow);
+}
+
 void WalletFrame::gotoOverviewPage()
 {
     walletStack->gotoOverviewPage();
@@ -76,6 +115,7 @@ void WalletFrame::gotoHistoryPage()
 {
     walletStack->gotoHistoryPage();
 }
+
 
 void WalletFrame::gotoAddressBookPage()
 {
@@ -94,6 +134,16 @@ void WalletFrame::gotoSendCoinsPage(QString addr)
     walletStack->gotoSendCoinsPage(addr);
 }
 
+void WalletFrame::gotoMiningPage()
+{
+    walletStack->gotoMiningPage();
+}
+
+void WalletFrame::gotoMiningInfoPage()
+{
+    walletStack->gotoMiningInfoPage();
+}
+
 void WalletFrame::gotoSignMessageTab(QString addr)
 {
     WalletView *walletView = currentWalletView();
@@ -110,6 +160,7 @@ void WalletFrame::gotoVerifyMessageTab(QString addr)
 
 void WalletFrame::encryptWallet(bool status)
 {
+    qDebug() << "status" << status;
     WalletView *walletView = currentWalletView();
     if (walletView)
         walletView->encryptWallet(status);
@@ -146,5 +197,10 @@ void WalletFrame::setEncryptionStatus()
 WalletView *WalletFrame::currentWalletView()
 {
     return qobject_cast<WalletView*>(walletStack->currentWidget());
+}
+
+void WalletFrame::updatePlot()
+{
+    walletStack->updatePlot();
 }
 
