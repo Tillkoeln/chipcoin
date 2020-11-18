@@ -30,9 +30,9 @@ public:
      */
     QWidget *setupTabChain(QWidget *prev);
 
-    void setAddress(const QString &address);
     void pasteEntry(const SendCoinsRecipient &rv);
     bool handleURI(const QString &uri);
+    bool fSplitBlock;
 
 public slots:
     void clear();
@@ -40,7 +40,7 @@ public slots:
     void accept();
     SendCoinsEntry *addEntry();
     void updateRemoveEnabled();
-    void setBalance(qint64 balance, qint64 unconfirmedBalance, qint64 immatureBalance);
+    void setBalance(qint64 balance, qint64 stake, qint64 unconfirmedBalance, qint64 immatureBalance);
 
 private:
     Ui::SendCoinsDialog *ui;
@@ -64,6 +64,9 @@ private slots:
     void coinControlClipboardPriority();
     void coinControlClipboardLowOutput();
     void coinControlClipboardChange();
+	void coinControlReturnChangeChecked(int);
+    void coinControlSplitBlockChecked(int);
+    void splitBlockLineEditChanged(const QString & text);
 };
 
 #endif // SENDCOINSDIALOG_H

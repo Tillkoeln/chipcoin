@@ -1,4 +1,5 @@
-// Copyright (c) 2009-2012 The Bitcoin Developers
+// Copyright (c) 2009-2016 The Bitcoin developers
+// Copyright (c) 2016 The Chipcoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef __CRYPTER_H__
@@ -53,9 +54,29 @@ public:
         // 25000 rounds is just under 0.1 seconds on a 1.86 GHz Pentium M
         // ie slightly lower than the lowest hardware we need bother supporting
         nDeriveIterations = 25000;
-        nDerivationMethod = 0;
+        nDerivationMethod = 1;
         vchOtherDerivationParameters = std::vector<unsigned char>(0);
     }
+
+    CMasterKey(unsigned int nDerivationMethodIndex)
+    {
+        switch (nDerivationMethodIndex)
+        {
+            case 0: // sha512
+            default:
+                nDeriveIterations = 25000;
+                nDerivationMethod = 0;
+                vchOtherDerivationParameters = std::vector<unsigned char>(0);
+            break;
+
+            case 1: // scrypt+sha512
+                nDeriveIterations = 10000;
+                nDerivationMethod = 1;
+                vchOtherDerivationParameters = std::vector<unsigned char>(0);
+            break;
+        }
+    }
+
 };
 
 typedef std::vector<unsigned char, secure_allocator<unsigned char> > CKeyingMaterial;
@@ -76,8 +97,8 @@ public:
 
     void CleanKey()
     {
-        OPENSSL_cleanse(chKey, sizeof(chKey));
-        OPENSSL_cleanse(chIV, sizeof(chIV));
+        OPENSSL_cleanse(&chKey, sizeof chKey);
+        OPENSSL_cleanse(&chIV, sizeof chIV);
         fKeySet = false;
     }
 
@@ -101,7 +122,7 @@ public:
     }
 };
 
-bool EncryptSecret(const CKeyingMaterial& vMasterKey, const CKeyingMaterial &vchPlaintext, const uint256& nIV, std::vector<unsigned char> &vchCiphertext);
-bool DecryptSecret(const CKeyingMaterial& vMasterKey, const std::vector<unsigned char>& vchCiphertext, const uint256& nIV, CKeyingMaterial& vchPlaintext);
+bool EncryptSecret(CKeyingMaterial& vMasterKey, const CSecret &vchPlaintext, const uint256& nIV, std::vector<unsigned char> &vchCiphertext);
+bool DecryptSecret(const CKeyingMaterial& vMasterKey, const std::vector<unsigned char> &vchCiphertext, const uint256& nIV, CSecret &vchPlaintext);
 
 #endif

@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InFormation</class>
+ <widget class="QWidget" name="InFormation">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>857</width>
+    <height>561</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_5" stretch="0">
+   <property name="topMargin">
+    <number>2</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frameTop">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <property name="spacing">
+       <number>5</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QWidget" name="widget" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>38</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #1C1C1F;</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="maximumSize">
+            <size>
+             <width>16</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icons/info&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="font">
+            <font>
+             <family>Sans</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:13px; color:#eff0f1;&quot;&gt;Information&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="about_tab">
+         <attribute name="icon">
+          <iconset resource="../bitcoin.qrc">
+           <normaloff>:/icons/chip</normaloff>:/icons/chip</iconset>
+         </attribute>
+         <attribute name="title">
+          <string>Chipcoin</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>MS Shell Dlg 2</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">p, li { word-break: break-all; }</string>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#8cc63e;&quot;&gt;About Chipcoin&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Chipcoin is a cryptocurrency meant for the GPU mining and Proof of Stake community. The Chipcoin wallet and web platform are developed and realized with usability and innovation as main starting points. More information about Chipcoin can be found on our &lt;a href=&quot;https://chipcoin.info&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#8cc63e;&quot;&gt;website&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;We continue to develop new and easy to use features to improve our market position and global reach. Upcoming developments and releases can be found in our &lt;a href=&quot;https://chipcoin.info/roadmap&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#8cc63e;&quot;&gt;roadmap&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#8cc63e;&quot;&gt;Links&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+            <property name="margin">
+             <number>6</number>
+            </property>
+            <property name="openExternalLinks">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget6_2" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout3_2">
+             <property name="spacing">
+              <number>12</number>
+             </property>
+             <property name="leftMargin">
+              <number>6</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>6</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label7_2">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://chipcoin.info&quot;&gt;&lt;img src=&quot;:/buttons/web&quot;/&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label8_2">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.chipcoin.info/explorer/home&quot;&gt;&lt;img src=&quot;:/buttons/explorer&quot;/&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label9_2">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.chipcoin.info/wallet&quot;&gt;&lt;img src=&quot;:/buttons/webwallet&quot;/&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget6_3" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout3_3">
+             <property name="spacing">
+              <number>12</number>
+             </property>
+             <property name="leftMargin">
+              <number>6</number>
+             </property>
+             <property name="topMargin">
+              <number>6</number>
+             </property>
+             <property name="rightMargin">
+              <number>6</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label9_3">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.chipcoin.info/exchanges&quot;&gt;&lt;img src=&quot;:/buttons/exchanges&quot;/&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label9_4">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.chipcoin.info/pools&quot;&gt;&lt;img src=&quot;:/buttons/pools&quot;/&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label8_2_5">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/blockpioneers/chipcoin&quot;&gt;&lt;img src=&quot;:/buttons/github&quot;/&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget6_3_#" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout3_4">
+             <property name="spacing">
+              <number>12</number>
+             </property>
+             <property name="leftMargin">
+              <number>6</number>
+             </property>
+             <property name="topMargin">
+              <number>6</number>
+             </property>
+             <property name="rightMargin">
+              <number>6</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label7_2_6">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/chip_coin&quot;&gt;&lt;img src=&quot;:/buttons/twitter&quot;/&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label8_3">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.chipcoin.info/discord&quot;&gt;&lt;img src=&quot;:/buttons/discord&quot;/&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label9_5">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.chipcoin.info/bitcointalk&quot;&gt;&lt;img src=&quot;:/buttons/bitcointalk&quot;/&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2_3">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget6_3_9" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout3_5">
+             <property name="spacing">
+              <number>12</number>
+             </property>
+             <property name="leftMargin">
+              <number>6</number>
+             </property>
+             <property name="topMargin">
+              <number>6</number>
+             </property>
+             <property name="rightMargin">
+              <number>6</number>
+             </property>
+             <property name="bottomMargin">
+              <number>6</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label7_2_2">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://chipcoin.info/bootstrap&quot;&gt;&lt;img src=&quot;:/buttons/bootstrap&quot;/&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label8_4">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.chipcoin.info/update?version=4.0.0.0&quot;&gt;&lt;img src=&quot;:/buttons/update&quot;/&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2_4">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="core_tab">
+         <attribute name="icon">
+          <iconset resource="../bitcoin.qrc">
+           <normaloff>:/icons/coincontrol</normaloff>
+           <normalon>:/icons/coincontrol2</normalon>:/icons/coincontrol</iconset>
+         </attribute>
+         <attribute name="title">
+          <string>Core</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QScrollArea" name="scrollArea">
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>829</width>
+               <height>469</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_2_5">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>MS Shell Dlg 2</family>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">p, li { word-break: break-all; }</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#8cc63e;&quot;&gt;Core:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;The Chipcoin network utilizes the ASIC resistant X17 hashing algorithm to secure the blockchain. The block/transaction validation process is called mining. For each block of transactions validated, the miners receive a certain reward in CHIP. Blocks can be minted through Proof-of-Work mining, or Proof-of-Stake mining.&lt;/p&gt;&lt;p&gt;The Chipcoin network operates on a peer to peer protocol. There are no central parties involved. We're a decentralized digital currency, with a network that keeps moving through mining.&lt;/p&gt;&lt;hr/&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#8cc63e;&quot;&gt;Proof of Work:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Chipcoin Proof of Work (PoW) mining is a protocol that requires computing power from a CPU or GPU to solve blocks. The miner who solves the block, receives the block reward and fees. To increase your chances on finding a block, joining a mining pool is recommended.&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#8cc63e;&quot;&gt;Proof of Stake:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Proof of Stake (PoS) is an alternative method to validate transactions and earn block rewards on the Chipcoin blockchain. Unlike Proof of Work (PoW) mining. PoS mining does not require much computing power or GPU's. Instead, all that is required, is a Chipcoin client connected to the network.&lt;/p&gt;&lt;p&gt;To start staking, you need balance. This balance needs to mature for a minimum of 2 hours after confirmation, before it becomes eligible to stake. Your balance is seen as an input for &amp;quot;hashing&amp;quot; a block. It will select these inputs based on transaction age and weight, to try and generate a stake. You are competing for the next block with everyone else who has their wallet open. The more balance you have, the more chance you have on solving and staking blocks.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="margin">
+                 <number>6</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="shortcircuit_tab">
+         <attribute name="icon">
+          <iconset resource="../bitcoin.qrc">
+           <normaloff>:/icons/shortcircuit</normaloff>
+           <normalon>:/icons/shortcircuit2</normalon>:/icons/shortcircuit</iconset>
+         </attribute>
+         <attribute name="title">
+          <string>Short Circuit</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_2_1">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QScrollArea" name="scrollArea_2">
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents_2">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>812</width>
+               <height>1887</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_2_2">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_3_31">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>MS Shell Dlg 2</family>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">p, li { word-break: break-all; }</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#8cc63e;&quot;&gt;What is Short Circuit?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Created for Proof of Stake enthusiasts, Short Circuit is a custom reward scheme for Proof of Stake mining. It allows you to lock your inputs and &amp;quot;short circuit&amp;quot; them from staking. The longer your funds are locked, the more CHIP you will receive in your staking reward. Short Circuit rewards start from 1.5 CHIP for 10 days, and going all the way up to 120.00 CHIP for a 120 days locking cycle!&lt;/p&gt;&lt;p&gt;Locking inputs for Short Circuit rewards is set up through the &lt;span style=&quot; font-weight:600;&quot;&gt;coin control&lt;/span&gt; tool in the send coins tab. You can lock or unlock your inputs at any time. Inputs that are locked, will not stake until you unlock them. Keeping track of locked time and locking/unlocking has to be done manually.&lt;/p&gt;&lt;p&gt;If you don't want to participate in Short Circuit staking, you can leave all your funds as is, and enjoy a regular staking reward of 0.01 CHIP per staked block.&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#8cc63e;&quot;&gt;Reward scheme:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt; font-style:italic;&quot;&gt;The rewards are categorized in common and precious metals.&lt;/span&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;1&quot; cellpadding=&quot;6&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Type&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Lock Cycle&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Total&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Approximate Daily&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;Platinum&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;120 Days&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;120.00 CHIP&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;1.00 CHIP&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;Gold&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;90 Days&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;67.50 CHIP&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;0.75 CHIP&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;Silver&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;60 Days&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;30.00 CHIP&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;0.50 CHIP&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;Bronze&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;30 Days&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;7.50 CHIP&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;0.25 CHIP&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;Iron&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;10 Days&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;1.50 CHIP&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;0.15 CHIP&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;Ore&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;2 hours&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;0.01 CHIP&lt;/p&gt;&lt;/td&gt;&lt;td&gt;&lt;p align=&quot;right&quot;&gt;-&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt;&quot;&gt;*Approximate Daily amount depends on network competitiveness&lt;/span&gt;&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#8cc63e;&quot;&gt;How to lock funds:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;1: Go to the send coins tab.&lt;br/&gt;2: Click on the &amp;quot;Select Input&amp;quot; button in the coin control frame&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;img src=&quot;:/howto/coincontrolhowto&quot;/&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;3: Select an input you want to short circuit, and press the lock button.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;img src=&quot;:/howto/lock1&quot;/&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;4: Done! You should see a Chipcoin icon next to the locked input, and it should be counted in the total of short circuited inputs.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;img src=&quot;:/howto/lock2&quot;/&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;5: To unlock inputs, repeat the process, but press the unlock button instead.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="margin">
+                 <number>6</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_2_4">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="optimizer_tab">
+         <attribute name="icon">
+          <iconset resource="../bitcoin.qrc">
+           <normaloff>:/icons/flask</normaloff>
+           <normalon>:/icons/flask2</normalon>:/icons/flask</iconset>
+         </attribute>
+         <attribute name="title">
+          <string>Staking Optimizer</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_2_3">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QScrollArea" name="scrollArea_3">
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents_3">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>912</width>
+               <height>2662</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_2_4">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_3_32">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>MS Shell Dlg 2</family>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">p, li { word-break: break-all; }</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#8cc63e;&quot;&gt;What is the Staking Optimizer? &lt;/span&gt;&lt;span style=&quot; font-size:7pt;&quot;&gt;(also known as blocksplitter)&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;The Staking Optimizer is a tool to split your transactions in multiple blocks/inputs for staking. This is useful for the following reasons:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Multiple inputs competing on the network for the next staking block instead of just one.&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;One large input is not efficient because it has to mature, gain age and weight every time it has staked.&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You can select one or multiple smaller inputs for sending a transaction, without resetting your age and weight.&lt;/li&gt;&lt;/ul&gt;&lt;p align=&quot;justify&quot;&gt;The Staking Optimizer is configured through the &lt;span style=&quot; font-weight:600;&quot;&gt;coin control&lt;/span&gt; tool in the send coins tab.&lt;br/&gt;&lt;br/&gt;&lt;span style=&quot; font-size:7pt;&quot;&gt;*Staking Optimizer transactions require a fee of 0.10 CHIP&lt;/span&gt;&lt;/p&gt;&lt;hr/&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#8cc63e;&quot;&gt;How to use the Staking Optimizer:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;1: Go to the send coins tab.&lt;br/&gt;2: Click on the &amp;quot;Select Input&amp;quot; button in the coin control frame&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;img src=&quot;:/howto/coincontrolhowto&quot;/&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;3: Select an input you want use for the Staking Optimizer transaction, and press the OK button.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;img src=&quot;:/howto/optimize1&quot;/&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;4: Activate the Staking Optimizer.&lt;br/&gt;5: Enter the amount of outputs you desire.&lt;br/&gt;6: Right click on &amp;quot;After Fee&amp;quot; and press &amp;quot;Copy after fee&amp;quot;.&lt;br/&gt;7: Paste the copied &amp;quot;After Fee&amp;quot; into the amount input field in the transaction frame, enter an address, and press the Send button.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;img src=&quot;:/howto/optimize2&quot;/&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;8: Check your transaction before confirming.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;img src=&quot;:/howto/optimize3&quot;/&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;9: Confirm the Staking Optimizer transaction fee.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;img src=&quot;:/howto/optimize4&quot;/&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;10: Done! If you go back to coin control, you can see a successful output split. These outputs will now function as inputs for staking blocks when they have matured.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;img src=&quot;:/howto/optimize5&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="margin">
+                 <number>6</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_2_5">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../bitcoin.qrc"/>
+ </resources>
+ <connections/>
+</ui>

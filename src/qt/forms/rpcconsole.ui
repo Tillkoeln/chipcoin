@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ChipCoin - Debug window</string>
+   <string>Chipcoin - Debug window</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -36,7 +36,7 @@
           </font>
          </property>
          <property name="text">
-          <string>ChipCoin Core</string>
+          <string>Chipcoin Core</string>
          </property>
         </widget>
        </item>
@@ -206,6 +206,9 @@
          <property name="enabled">
           <bool>false</bool>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background:transparent;background-color:transparent;border:0px;</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -322,7 +325,7 @@
        <item row="15" column="0">
         <widget class="QPushButton" name="openDebugLogfileButton">
          <property name="toolTip">
-          <string>Open the ChipCoin debug log file from the current data directory. This can take a few seconds for large log files.</string>
+          <string>Open the Chipcoin debug log file from the current data directory. This can take a few seconds for large log files.</string>
          </property>
          <property name="text">
           <string>&amp;Open</string>
@@ -348,7 +351,7 @@
        <item row="17" column="0">
         <widget class="QPushButton" name="showCLOptionsButton">
          <property name="toolTip">
-          <string>Show the ChipCoin-Qt help message to get a list with possible ChipCoin command-line options.</string>
+          <string>Show the Chipcoin-Qt help message to get a list with possible Chipcoin command-line options.</string>
          </property>
          <property name="text">
           <string>&amp;Show</string>
@@ -431,7 +434,7 @@
            </property>
            <property name="icon">
             <iconset resource="../bitcoin.qrc">
-             <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
+             <normaloff>:/icons/remove2</normaloff>:/icons/remove2</iconset>
            </property>
            <property name="shortcut">
             <string notr="true">Ctrl+L</string>

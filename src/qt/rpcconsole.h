@@ -49,6 +49,8 @@ public slots:
     void browseHistory(int offset);
     /** Scroll console view to end */
     void scrollToEnd();
+    /** Show debug console Tab */
+    void showTab_Debug();
 signals:
     // For RPC command executor
     void stopExecutor();

@@ -17,7 +17,7 @@ public:
     explicit SplashScreen(QWidget *parent = 0);
     ~SplashScreen();
 
-     QLabel *bg;
+    QLabel *bg;
     QPixmap bgPixmap;
 
     QPainter *painter;
